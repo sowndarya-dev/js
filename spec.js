@@ -1,18 +1,14 @@
-describe("Input Validation", function() {
-    var input;
-  beforeEach(function() {
-     input="java";
-  });
-    it("Min Length validation", function() {
-        input ="ja";
-        expect(input.validInput()).not.toBeTruthy()
-        expect(input.error_message).toEqual("Input is  too sort")
+describe("A suite", function() {
+    it("contains spec with an expectation", function() {
+      expect(true).toBe(true);
     });
   });
-  describe("Max Length Validation", function() {
-     input="java is diffrent from javascript.java is object oriented language.Javascript is scripting languge";
-    expect(input.validInput()).not.toBeTruthy()
-    expect(input.error_message).toEqual("Input is too Long")
-
-    
+  describe("A suite is just a function", function() {
+    var a;
+  
+    it("and so is a spec", function() {
+      a = true;
+  
+      expect(a).toBe(true);
+    });
   });
