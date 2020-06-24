@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 16px Arial;  
+}
+
+/*the container must be positioned relative:*/
+.autocomplete {
+  position: relative;
+  display: inline-block;
+  width: 584px;
+}
+
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 25px;
+  cursor: pointer;
+  background-color: #fff; 
+  text-align: left;
+  /* border-bottom: 1px solid #d4d4d4;  */
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+
+.search{
+        background: white;
+    cursor: text;
+    width: 100%;
+    margin: 0 auto;
+    width: 584px;
+    height: 40px;
+    border-radius: 30px;
+    padding-left: 26px;
+    border: 1px solid white;
+    box-shadow: 3px 3px 6px 6px #0000000f;
+}
+
+.search:focus {
+    border: 1px solid #ACACAC;
+}
+
+body {
+    text-align: center;
+}
+form {
+    display: inline-block;
+}
+.search:focus{
+    outline: none;
+}
+.autocomplete-items {
+  position: absolute;
+  /* border: 1px solid #d4d4d4; */
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+    padding: 25px;
+    cursor: pointer;
+    background-color: #fff; 
+    text-align: left;
+    /* border-bottom: 1px solid #d4d4d4;  */
+}
+#result{
+  padding: 20px;
+  text-align: center;
+}
+    
+</style>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/jasmine-html.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.5.0/boot.js"></script>
+
+</head>     
+<body>
+
+<h2>Quset Engine</h2>
+<!--Make sure the form has the autocomplete function switched off:-->
+<form autocomplete="off">
+  <div class="autocomplete">
+    <input id="myInput" autofocus type="text" class="search" name="myCountry" minlength="3" maxlength="50" placeholder="Searh Here...">
+  </div>
+  <!-- <input type="submit"> -->
+</form>
+<p id="result">
+
+</p>
+
+</body>
+
+<script src="script.js"></script>
+<script src="spec.js"></script>
+
+</html>
